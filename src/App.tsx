@@ -10,6 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
+        <p>{import.meta.env.VITE_APP_TITLE}</p>
         <p>
           <button type="button" onClick={() => setCount((c) => c + 1)}>
             count is: {count}

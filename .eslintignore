@@ -1,3 +1,3 @@
-/vite.config.ts
-/vitest.config.
-/__tests__
+**/*.config.*
+
+/config

@@ -1,6 +1,7 @@
-import App from "~/App";
 import { shallow } from "enzyme";
 import { describe, expect, it } from "vitest";
+
+import App from "./App";
 
 describe("App", () => {
   it("renders snapshots", () => {

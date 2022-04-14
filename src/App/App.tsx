@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import logo from "~/assets/images/logo.svg";
+import axios from "axios";
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0);
+
+  const teste = async () => {
+    const { data } = await axios.get("/api/users");
+    console.log(data);
+  };
+
+  useEffect(() => {
+    teste();
+  }, []);
 
   return (
     <div className="App">
@@ -42,5 +52,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

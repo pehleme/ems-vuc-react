@@ -1,11 +1,11 @@
 import { shallow } from "enzyme";
 import { describe, expect, it } from "vitest";
 
-import { App } from "./App";
+import SignUpPage from "./SignUpPage";
 
-describe("App", () => {
+describe("SignUpPage", () => {
   it("renders snapshots", () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<SignUpPage />);
     expect(wrapper).toMatchSnapshot();
   });
 });

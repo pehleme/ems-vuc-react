@@ -11,7 +11,10 @@
     "plugin:prettier/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:effector/recommended",
+    "plugin:effector/scope",
+    "plugin:tailwindcss/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -36,11 +39,24 @@
     "@typescript-eslint",
     "prettier",
     "import-helpers",
-    "react-hooks"
+    "react-hooks",
+    "effector",
+    "tailwindcss"
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "server/**/*.ts",
+          "config/**/*.ts",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ]
+      }
+    ],
     "import-helpers/order-imports": [
       "warn",
       {

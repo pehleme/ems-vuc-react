@@ -1,7 +1,7 @@
-import { Server } from 'miragejs'
+import { Server } from "miragejs";
 
 export function seeds(server: Server): void {
-  server.loadFixtures()
+  server.loadFixtures();
 
-  server.createList('user', 50)
+  server.createList("todo", 50);
 }

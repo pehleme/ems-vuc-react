@@ -1,12 +1,10 @@
-import { Server } from 'miragejs/server'
+import { Server } from "miragejs/server";
 
 export function routes(this: Server): void {
-  this.namespace = 'api'
+  this.namespace = "api";
 
-  this.get(`/users`, (schema) =>
-    schema.db.users
-  )
+  this.get(`/todos`, (schema) => schema.db.todos);
 
-  this.namespace = ''
-  this.passthrough()
+  this.namespace = "";
+  this.passthrough();
 }

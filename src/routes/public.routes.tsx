@@ -1,7 +1,6 @@
-import { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
 
-const HomePage = lazy(() => import("~/pages/Home/HomePage"));
+import HomePage from "~/pages/Home/HomePage";
 
 const PUBLIC_ROUTES: RouteObject[] = [
   {

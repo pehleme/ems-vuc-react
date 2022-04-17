@@ -1,8 +1,6 @@
-import { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
 
-const SignInPage = lazy(() => import("~/pages/Auth/SignIn/SignInPage"));
-const SignUpPage = lazy(() => import("~/pages/Auth/SignUp/SignUpPage"));
+import { SignInPage, SignUpPage } from "~/pages";
 
 const PRIVATE_ROUTES: RouteObject[] = [
   {

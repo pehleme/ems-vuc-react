@@ -1,5 +1,6 @@
-import { Model } from 'miragejs'
+import { TodoModel } from "~/data/models";
+import { Model } from "miragejs";
 
 export const models = {
-  user: Model.extend({}),
-}
+  todo: Model.extend<TodoModel>({}),
+};

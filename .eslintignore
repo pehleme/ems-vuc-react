@@ -1,10 +1,7 @@
+.ci
+.docker
+.env
+.husky
+.vscode
+
 **/*.config.*
-
-/.ci
-/.docker
-/.env
-/.husky
-/.vscode
-
-/config
-/server

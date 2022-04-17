@@ -1,2 +1,1 @@
-
-export const fixtures = {}
+export const fixtures = {};

@@ -16,13 +16,13 @@ const todo = Factory.extend<TodoModel>({
     ]);
   },
   title() {
-    return faker.commerce.productName();
+    return faker.lorem.word();
   },
   description() {
-    return faker.commerce.productDescription();
+    return faker.lorem.words();
   },
   color() {
-    return faker.commerce.color();
+    return `#${faker.datatype.hexadecimal(7).substring(3)}`;
   },
 });
 

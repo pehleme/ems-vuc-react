@@ -1,4 +1,6 @@
 import * as path from "path";
+import { VitePWA } from "vite-plugin-pwa";
+import WindiCSS from "vite-plugin-windicss";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
@@ -14,6 +16,14 @@ export default defineConfig({
       reporter: ["cobertura", "html", "lcov", "text-summary", "text"],
     },
   },
-  envDir: path.resolve(__dirname, ".env"),
-  plugins: [tsconfigPaths(), react()],
+  plugins: [
+    react({
+      babel: {
+        babelrc: true,
+      },
+    }),
+    tsconfigPaths(),
+    WindiCSS(),
+    VitePWA(),
+  ],
 });

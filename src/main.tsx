@@ -1,6 +1,7 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
+import "virtual:windi.css";
 import { App } from "~/App/App";
 import "~/styles/index.css";
 // ONLY USE FOR SANDBOX MODE
@@ -11,8 +12,8 @@ if (import.meta.env.MODE === "sandbox") {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById("root"),
 );

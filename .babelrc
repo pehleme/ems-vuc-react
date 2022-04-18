@@ -3,5 +3,5 @@
     ["@babel/preset-react", { "runtime": "automatic" }],
     "@babel/preset-typescript"
   ],
-  "plugins": ["formatjs"]
+  "plugins": ["babel-plugin-twin", "babel-plugin-macros", "formatjs"]
 }

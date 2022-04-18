@@ -1,42 +1,26 @@
 import { useState } from "react";
 
-import logo from "~/assets/images/logo.svg";
-
 function HomePage() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="text-center">
+      <header className="m-4">
         <p>Hello Vite + React!</p>
-        <p>{import.meta.env.VITE_APP_TITLE}</p>
         <p>
-          <button type="button" onClick={() => setCount((c) => c + 1)}>
+          <button
+            type="button"
+            className="bg-gradient-to-r from-green-400 to-blue-500
+            text-white text-center italic
+            px-4 py-2 rounded cursor-default
+            transition-all duration-400
+            hover:rounded-2xl
+            dark:(from-teal-400 to-yellow-500)
+            bg-tete"
+            onClick={() => setCount((c) => c + 1)}
+          >
             count is: {count}
           </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
         </p>
       </header>
     </div>

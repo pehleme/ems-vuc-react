@@ -3,7 +3,7 @@ import { HashRouter } from "react-router-dom";
 import { GlobalProvider } from "~/contexts";
 import { Routes } from "~/routes/Routes";
 import { theme } from "~/styles/mui/theme";
-import { useRegisterSW } from "virtual:pwa-register/react";
+import { useRegisterSW } from "virtual:pwa-register";
 
 import {
   CssBaseline,

@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
         inject: {
           data: {
             title: env.VITE_APP_TITLE,
+            description: env.VITE_APP_DESCRIPTION,
           },
         },
       }),
@@ -31,7 +32,8 @@ export default defineConfig(({ mode }) => {
         includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
         manifest: {
           name: env.VITE_APP_TITLE,
-          short_name: "HDN",
+          description: env.VITE_APP_DESCRIPTION,
+          short_name: "VUC",
           theme_color: "#ffffff",
           icons: [
             {

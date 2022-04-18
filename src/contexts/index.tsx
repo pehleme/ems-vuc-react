@@ -7,7 +7,7 @@ interface GlobalProviderProps {
 }
 
 function GlobalProvider({ children }: GlobalProviderProps) {
-  return <Box>{children}</Box>;
+  return <Box className="h-full">{children}</Box>;
 }
 
 export { GlobalProvider };

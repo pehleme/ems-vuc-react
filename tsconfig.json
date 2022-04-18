@@ -15,8 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "types": ["vite-plugin-pwa/client"]
+    "noEmit": true
   },
   "include": ["src", "server", "config", "*.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -1,12 +1,12 @@
 import { shallow } from "enzyme";
 import { describe, expect, it } from "vitest";
 
-import { HeaderCore } from "./Header";
-import { HeaderViewCore } from "./HeaderView";
+import { Header } from "./Header";
+import { HeaderView } from "./HeaderView";
 
 describe("ExampleComponent", () => {
   it("should render correctly", () => {
-    const wrapper = shallow(<HeaderCore />);
-    expect(wrapper.type()).toBe(HeaderViewCore);
+    const wrapper = shallow(<Header />);
+    expect(wrapper.type()).toBe(HeaderView);
   });
 });

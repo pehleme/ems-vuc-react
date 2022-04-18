@@ -1,7 +1,7 @@
-import { HeaderViewCore } from "./HeaderView";
+import { HeaderView } from "./HeaderView";
 
-function HeaderCore() {
-  return <HeaderViewCore />;
+function Header() {
+  return <HeaderView />;
 }
 
-export { HeaderCore };
+export { Header };

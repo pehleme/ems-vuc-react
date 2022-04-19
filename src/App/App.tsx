@@ -16,14 +16,14 @@ function App() {
 
   return (
     <HashRouter>
-      <GlobalProvider>
-        <ThemeProvider theme={theme}>
-          <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <StyledEngineProvider injectFirst>
+          <GlobalProvider>
             <CssBaseline />
             <Routes />
-          </StyledEngineProvider>
-        </ThemeProvider>
-      </GlobalProvider>
+          </GlobalProvider>
+        </StyledEngineProvider>
+      </ThemeProvider>
     </HashRouter>
   );
 }

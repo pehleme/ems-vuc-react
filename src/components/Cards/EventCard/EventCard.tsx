@@ -1,14 +1,17 @@
-import { ReactNode } from "react";
+import { PropsWithChildren } from "react";
 
 import { Box, BoxProps, Button, Typography } from "@mui/material";
 
-interface EventCardProps extends BoxProps {
+type EventCardProps = BoxProps & {
   title?: string;
-  children?: ReactNode;
   icon?: string;
-}
+};
 
-function EventCard({ title, children, icon }: EventCardProps) {
+function EventCard({
+  title,
+  children,
+  icon,
+}: PropsWithChildren<EventCardProps>) {
   return (
     <Box
       className="flex flex-col justify-between p-5 space-y-5 h-full"

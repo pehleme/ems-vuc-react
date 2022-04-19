@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { PropsWithChildren, ReactElement } from "react";
 import {
   FaChartBar,
   FaChevronCircleDown,
@@ -11,19 +11,18 @@ import { PrescriptionModel } from "~/data/models";
 
 import { Box, BoxProps, Divider } from "@mui/material";
 
-interface PrescriptionBoxProps {
+type PrescriptionBoxProps = {
   icon?: ReactElement;
-  children?: ReactNode;
   isDown?: boolean;
   isUp?: boolean;
-}
+};
 
 function PrescriptionBox({
   icon,
   children,
   isUp,
   isDown,
-}: PrescriptionBoxProps) {
+}: PropsWithChildren<PrescriptionBoxProps>) {
   return (
     <Box className="flex justify-between items-center">
       <Box className="flex items-center space-x-2">
@@ -40,7 +39,7 @@ function PrescriptionBox({
   );
 }
 
-interface PrescriptionCardProps extends PrescriptionModel, BoxProps {}
+type PrescriptionCardProps = PrescriptionModel & BoxProps;
 
 export function PrescriptionCard({
   name,

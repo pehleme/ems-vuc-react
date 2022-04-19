@@ -1,18 +1,17 @@
-import { ReactNode } from "react";
+import { PropsWithChildren } from "react";
 
 import { Box } from "@mui/material";
 
-interface InfoBoxProps {
+type InfoBoxProps = {
   label: string;
-  children?: ReactNode;
   orientation?: "horizontal" | "vertical";
-}
+};
 
 function InfoBox({
   label,
   orientation = "horizontal",
   children,
-}: InfoBoxProps) {
+}: PropsWithChildren<InfoBoxProps>) {
   const orientationClass = orientation === "horizontal" ? "flex" : "flex-row";
 
   return (

@@ -38,7 +38,7 @@ function HomePage() {
       >
         <Grid container spacing={2}>
           {prescriptions.map(({ name, cat, comment, percentage }) => (
-            <Grid item xs={4}>
+            <Grid key={name} item xs={4}>
               <PrescriptionCard
                 name={name}
                 cat={cat}

@@ -10,7 +10,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: path.resolve(__dirname, "config/setupTests.ts"),
+    setupFiles: path.resolve(__dirname, "config/test/setupTests.ts"),
     clearMocks: true,
     coverage: {
       reporter: ["cobertura", "html", "lcov", "text-summary", "text"],

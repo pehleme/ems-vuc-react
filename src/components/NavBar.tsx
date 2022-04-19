@@ -2,11 +2,11 @@ import { FaCheckCircle, FaChevronRight } from "react-icons/fa";
 
 import { Box } from "@mui/material";
 
-interface NavBarItems {
+type NavBarItems = {
   title?: string;
   subtitle?: string;
   helper?: string;
-}
+};
 
 export function NavBar() {
   const menuItems: NavBarItems[] = [
@@ -31,7 +31,10 @@ export function NavBar() {
   return (
     <Box className="flex flex-col justify-around h-full divide-y-2">
       {menuItems.map(({ title, subtitle, helper }) => (
-        <Box className="flex flex-row justify-between items-center h-full divide-gray-300 cursor-pointer">
+        <Box
+          key={title}
+          className="flex flex-row justify-between items-center h-full divide-gray-300 cursor-pointer"
+        >
           <Box className="flex flex-col space-y-1">
             <Box className="text-lg font-bold">{title}</Box>
             {subtitle && (

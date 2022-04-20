@@ -1,9 +1,9 @@
 import "@fontsource/roboto";
 import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 
 import "virtual:windi.css";
-import { App } from "~/components/App/App";
+import { App } from "~/components";
 import "~/styles/index.css";
 
 // ONLY USE FOR SANDBOX MODE
@@ -13,7 +13,7 @@ import "~/styles/index.css";
 //   makeServer();
 // }
 
-ReactDOM.render(
+render(
   <StrictMode>
     <App />
   </StrictMode>,

@@ -15,8 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "types": ["vitest/importMeta"]
+    "noEmit": true
   },
   "include": ["src", "server", "config", "*.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

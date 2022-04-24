@@ -1,4 +1,4 @@
-import { Server } from "miragejs/server";
+import { Server } from "miragejs";
 
 export function routes(this: Server): void {
   this.namespace = "api";

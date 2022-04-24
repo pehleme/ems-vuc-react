@@ -1,12 +1,13 @@
 import { initReactI18next } from "react-i18next";
 
-import { use } from "i18next";
+import { VITE_APP_LANGUAGE } from "~/utils/constants";
+import { Resource, use } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import enUS from "./locales/enUS/common.json";
 import ptBR from "./locales/ptBR/common.json";
 
-const resources = {
+const resources: Resource = {
   ["en-US"]: {
     translation: enUS,
   },
@@ -17,7 +18,7 @@ const resources = {
 
 const i18n = use(initReactI18next).use(LanguageDetector).init({
   resources,
-  fallbackLng: "pt-BR",
+  fallbackLng: VITE_APP_LANGUAGE,
 });
 
 export { i18n };

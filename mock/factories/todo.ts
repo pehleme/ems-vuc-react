@@ -1,5 +1,5 @@
+import { TodoModel } from "~/data";
 import { TodoStatusEnum } from "~/data/enums";
-import { TodoModel } from "~/data/models";
 import { Factory } from "miragejs";
 
 import { faker } from "@faker-js/faker";

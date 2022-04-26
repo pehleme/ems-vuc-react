@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import { render } from "react-dom";
 
 import { App } from "~/components";
-import "~/clients/i18n";
+import "~/libs/i18n";
 
 // <--SANDBOX-->
 // import { MODE } from "~/utils/constants";

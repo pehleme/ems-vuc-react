@@ -3,15 +3,15 @@ import axios from "axios";
 
 import { Interceptors } from "./interceptors";
 
-const ApiClient = axios.create({
+const Api = axios.create({
   baseURL: API_URL,
 });
 
-ApiClient.interceptors.request.use(Interceptors.auth);
-ApiClient.interceptors.request.use(Interceptors.logger);
-ApiClient.interceptors.response.use(
+Api.interceptors.request.use(Interceptors.auth);
+Api.interceptors.request.use(Interceptors.logger);
+Api.interceptors.response.use(
   (response) => response,
   Interceptors.errorHandler,
 );
 
-export { ApiClient };
+export { Api };

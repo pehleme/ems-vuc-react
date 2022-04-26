@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { i18n } from "./i18n";
+import { Api } from "./api";
 
-describe("Api client", () => {
+describe("Api instance", () => {
   it("should create an instance", () => {
-    expect(i18n).toBeTruthy();
+    expect(Api).toBeTruthy();
   });
 });

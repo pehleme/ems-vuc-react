@@ -3,15 +3,15 @@ import { StrictMode } from "react";
 import { render } from "react-dom";
 
 import { App } from "~/components";
-import "~/i18n";
+import "~/clients/i18n";
+
 // <--SANDBOX-->
-import { MODE } from "~/utils/constants";
+// import { MODE } from "~/utils/constants";
+// import { makeServer } from "~mocks";
 
-import { makeServer } from "../mock";
-
-if (MODE === "sandbox") {
-  makeServer();
-}
+// if (MODE === "sandbox") {
+//   makeServer();
+// }
 // <--SANDBOX-->
 
 render(

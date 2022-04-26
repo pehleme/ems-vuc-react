@@ -4,14 +4,13 @@ import { render } from "react-dom";
 
 import { App } from "~/components";
 import "~/libs/i18n";
-
 // <--SANDBOX-->
-// import { MODE } from "~/utils/constants";
-// import { makeServer } from "~mocks";
+import { MODE } from "~/utils/constants";
+import { makeServer } from "~mocks";
 
-// if (MODE === "sandbox") {
-//   makeServer();
-// }
+if (MODE === "sandbox") {
+  makeServer();
+}
 // <--SANDBOX-->
 
 render(

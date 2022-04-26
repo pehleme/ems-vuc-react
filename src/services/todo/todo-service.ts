@@ -16,7 +16,7 @@ const find = async (id?: string, params?: object) => {
 };
 
 const create = async (body?: TodoModel) => {
-  await Api.post(`${API_PATH}`, body);
+  await Api.post(API_PATH, body);
 };
 
 const update = async (body?: TodoModel, id?: string) => {

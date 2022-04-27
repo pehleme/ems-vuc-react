@@ -9,6 +9,15 @@ const theme = createTheme({
       main: "#FFAA00",
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "html, body, #root": {
+          height: "100%",
+        },
+      },
+    },
+  },
   // overrides: {
   //   MuiCssBaseline: {
   //     "@global": {

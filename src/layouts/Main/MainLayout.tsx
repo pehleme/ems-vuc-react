@@ -1,12 +1,21 @@
 import { Outlet } from "react-router-dom";
 
-import { Container } from "@mui/material";
+import { Footer, Header } from "~/components";
+
+import { Box } from "@mui/material";
 
 function MainLayout() {
   return (
-    <Container component="main" maxWidth="lg">
+    <Box
+      height="100%"
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
+      <Header />
       <Outlet />
-    </Container>
+      <Footer />
+    </Box>
   );
 }
 

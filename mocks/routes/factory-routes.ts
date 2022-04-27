@@ -14,15 +14,16 @@ function factoryRoutes(this: Server, apiPath: string): void {
   this.post(`/${API_PATH}`, (schema, request) => {
     const body = request.requestBody;
 
-    schema.db[API_PATH].insert(body);
+    const { id } = schema.db[API_PATH].insert(JSON.parse(body));
 
-    return new Response(201);
+    return new Response(201, {}, id);
   });
 
   this.put(`/${API_PATH}/:id`, (schema, request) => {
+    const id = request.params.id;
     const body = request.requestBody;
 
-    schema.db[API_PATH].update(body);
+    schema.db[API_PATH].find(id).update(body);
 
     return new Response(204);
   });

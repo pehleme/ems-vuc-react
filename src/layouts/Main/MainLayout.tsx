@@ -13,7 +13,9 @@ function MainLayout() {
       justifyContent="space-between"
     >
       <Header />
-      <Outlet />
+      <Box height="100%">
+        <Outlet />
+      </Box>
       <Footer />
     </Box>
   );

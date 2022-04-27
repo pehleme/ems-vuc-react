@@ -1,5 +1,6 @@
 import { HashRouter } from "react-router-dom";
 
+import { GlobalProvider } from "~/contexts";
 import { Routes } from "~/routes/Routes";
 import { theme } from "~/styles/mui/theme";
 import { useRegisterSW } from "virtual:pwa-register/react";
@@ -17,8 +18,10 @@ function App() {
     <HashRouter>
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
-          <CssBaseline />
-          <Routes />
+          <GlobalProvider>
+            <CssBaseline />
+            <Routes />
+          </GlobalProvider>
         </StyledEngineProvider>
       </ThemeProvider>
     </HashRouter>

@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
 import "virtual:windi.css";
-import { App } from "~/components/App/App";
+import { App } from "~/App/App";
 import "~/styles/index.css";
 
 // ONLY USE FOR SANDBOX MODE

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 
-import { Footer, Header } from "~/components";
+import { Header } from "~/components";
 
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 function MainLayout() {
   return (
@@ -13,10 +13,14 @@ function MainLayout() {
       justifyContent="space-between"
     >
       <Header />
-      <Box height="100%">
-        <Outlet />
-      </Box>
-      <Footer />
+      <Grid container height="100%">
+        <Grid item xs={3}>
+          teste
+        </Grid>
+        <Grid item xs={9}>
+          <Outlet />
+        </Grid>
+      </Grid>
     </Box>
   );
 }

@@ -5,7 +5,11 @@ import { Box } from "@mui/material";
 function HomePage() {
   const { t } = useTranslation();
 
-  return <Box>teste</Box>;
+  return (
+    <Box p={3} bgcolor="#F8F9FB" height="100%">
+      {t("title")}
+    </Box>
+  );
 }
 
 export default HomePage;

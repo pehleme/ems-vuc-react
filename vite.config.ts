@@ -12,14 +12,6 @@ export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return {
-    test: {
-      globals: true,
-      environment: "jsdom",
-      setupFiles: [resolve(__dirname, "config/tests/setup.ts")],
-      coverage: {
-        reporter: ["cobertura", "html", "lcov", "text-summary", "text"],
-      },
-    },
     plugins: [
       react(),
       tsconfigPaths(),
@@ -60,5 +52,13 @@ export default defineConfig(async ({ mode }) => {
         },
       }),
     ],
+    test: {
+      globals: true,
+      environment: "jsdom",
+      setupFiles: [resolve(__dirname, "config/tests/setup.ts")],
+      coverage: {
+        reporter: ["cobertura", "html", "lcov", "text-summary", "text"],
+      },
+    },
   };
 });

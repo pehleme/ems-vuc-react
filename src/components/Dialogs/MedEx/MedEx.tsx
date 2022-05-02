@@ -15,24 +15,15 @@ import {
   TableRow,
 } from "@mui/material";
 
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
-  return { name, calories, fat, carbs, protein };
+function createData(date: string, access: number) {
+  return { date, access };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread1", 356, 16.0, 49, 3.9),
-  createData("Gingerbread2", 356, 16.0, 49, 3.9),
-  createData("Gingerbread3", 356, 16.0, 49, 3.9),
+  createData("março/2022", 5),
+  createData("fevereiro/2022", 20),
+  createData("janeiro/2022", 15),
+  createData("dezembro/2021", 4),
 ];
 
 function MedExDialog({ children }: { children?: ReactNode }) {
@@ -73,11 +64,9 @@ function MedExDialog({ children }: { children?: ReactNode }) {
               </TableHead>
               <TableBody>
                 {rows.map((row) => (
-                  <TableRow key={row.name}>
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
+                  <TableRow key={row.date}>
+                    <TableCell width={5}>{row.date}</TableCell>
+                    <TableCell align="right">{row.access}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

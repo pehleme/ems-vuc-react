@@ -15,24 +15,20 @@ import {
   TableRow,
 } from "@mui/material";
 
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
-  return { name, calories, fat, carbs, protein };
+function createData(date: string, opv: string) {
+  return { date, opv };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread1", 356, 16.0, 49, 3.9),
-  createData("Gingerbread2", 356, 16.0, 49, 3.9),
-  createData("Gingerbread3", 356, 16.0, 49, 3.9),
+  createData(
+    "10/03/22",
+    "Reforçar XPTO. Perguntar se existe oportunidade com XYZ.",
+  ),
+  createData(
+    "22/02/22",
+    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages. for 'lorem ipsum' will uncover many web sites still in their infancy.",
+  ),
+  createData("01/01/22", "Falar sobre medicamento XPT. Perguntar sobre ABC."),
 ];
 
 function OpvDialog() {
@@ -64,11 +60,9 @@ function OpvDialog() {
               </TableHead>
               <TableBody>
                 {rows.map((row) => (
-                  <TableRow key={row.name}>
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell>{row.carbs}</TableCell>
+                  <TableRow key={row.opv}>
+                    <TableCell width={5}>{row.date}</TableCell>
+                    <TableCell>{row.opv}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

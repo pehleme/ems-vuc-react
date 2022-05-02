@@ -1,4 +1,4 @@
-import { ReactNode, SyntheticEvent, useState } from "react";
+import { ReactNode, SyntheticEvent, useMemo, useState } from "react";
 
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
@@ -17,29 +17,29 @@ import {
   TableRow,
 } from "@mui/material";
 
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
-  return { name, calories, fat, carbs, protein };
+function createData(deliveryDate: string, name: string, quantity: number) {
+  return { deliveryDate, name, quantity };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread1", 356, 16.0, 49, 3.9),
-  createData("Gingerbread2", 356, 16.0, 49, 3.9),
-  createData("Gingerbread3", 356, 16.0, 49, 3.9),
+  createData("10/03/22", "Medicamento 1", 1),
+  createData("22/02/22", "Medicamento 2", 2),
+  createData("01/01/22", "Medicamento 3", 1),
+  createData("01/12/21", "Medicamento 4", 5),
 ];
 
 function SamplesDialog({ children }: { children?: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
+
+  const activeRows = useMemo(() => {
+    const half = Math.ceil(rows.length / 2);
+
+    const firstHalf = rows.slice(0, half);
+    const secondHalf = rows.slice(-half);
+
+    return activeTab === "1" ? firstHalf : secondHalf;
+  }, [activeTab]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -64,13 +64,11 @@ function SamplesDialog({ children }: { children?: ReactNode }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {activeRows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell>{row.calories}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell width={5}>{row.deliveryDate}</TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell align="right">{row.quantity}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -97,16 +95,17 @@ function SamplesDialog({ children }: { children?: ReactNode }) {
         <DialogContent>
           <TabContext value={activeTab}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <TabList
-                onChange={handleChangeTab}
-                aria-label="lab API tabs example"
-              >
+              <TabList onChange={handleChangeTab}>
                 <Tab label="Minhas" value="1" />
                 <Tab label="Colegas" value="2" />
               </TabList>
             </Box>
-            <TabPanel value="1">{table}</TabPanel>
-            <TabPanel value="2">{table}</TabPanel>
+            <TabPanel value="1" sx={{ px: 0 }}>
+              {table}
+            </TabPanel>
+            <TabPanel value="2" sx={{ px: 0 }}>
+              {table}
+            </TabPanel>
           </TabContext>
         </DialogContent>
         <DialogActions>

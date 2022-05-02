@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useMemo, useState } from "react";
 
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
@@ -17,25 +17,37 @@ import {
   TableRow,
 } from "@mui/material";
 
-function createData(date: string, notes: string) {
-  return { date, notes };
+function createData(date: string, notes: string, propagandist?: string) {
+  return { date, notes, propagandist };
 }
 
 const rows = [
+  createData("10/03/22", "A dra. gosta de flores, especialmente orquideas"),
+  createData("22/02/22", "A mãe da dra. usa medicamento ABC"),
+  createData("01/01/22", "A dra. gosta de flores, especialmente orquideas"),
+  createData("01/12/21", "A mãe da dra. usa medicamento ABC", "Amanda Castro"),
   createData(
-    "15/12/1998",
-    "Reforçar XPTO. Perguntar se existe oportunidade com XYZ.",
+    "01/11/21",
+    "A dra. gosta de flores, especialmente orquideas",
+    "Gabriel Santos",
   ),
-  createData(
-    "15/12/1998",
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages. for 'lorem ipsum' will uncover many web sites still in their infancy.",
-  ),
-  createData("15/12/1998", "Falar sobre medicamento XPT. Perguntar sobre ABC."),
+  createData("01/10/21", "A mãe da dra. usa medicamento ABC", "Pedro Silva"),
 ];
 
 function NotesDialog() {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
+
+  const isColleague = activeTab === "2";
+
+  const activeRows = useMemo(() => {
+    const half = Math.ceil(rows.length / 2);
+
+    const firstHalf = rows.slice(0, half);
+    const secondHalf = rows.slice(-half);
+
+    return isColleague ? secondHalf : firstHalf;
+  }, [isColleague]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -56,13 +68,15 @@ function NotesDialog() {
           <TableRow>
             <TableCell>Data</TableCell>
             <TableCell>Anotações</TableCell>
+            {isColleague && <TableCell>Propagandista</TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.notes}>
+          {activeRows.map((row) => (
+            <TableRow key={row.date}>
               <TableCell width={5}>{row.date}</TableCell>
               <TableCell>{row.notes}</TableCell>
+              {isColleague && <TableCell>{row.propagandist}</TableCell>}
             </TableRow>
           ))}
         </TableBody>
@@ -80,16 +94,17 @@ function NotesDialog() {
         <DialogContent>
           <TabContext value={activeTab}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <TabList
-                onChange={handleChangeTab}
-                aria-label="lab API tabs example"
-              >
+              <TabList onChange={handleChangeTab}>
                 <Tab label="Minhas" value="1" />
                 <Tab label="Colegas" value="2" />
               </TabList>
             </Box>
-            <TabPanel value="1">{table}</TabPanel>
-            <TabPanel value="2">{table}</TabPanel>
+            <TabPanel value="1" sx={{ px: 0 }}>
+              {table}
+            </TabPanel>
+            <TabPanel value="2" sx={{ px: 0 }}>
+              {table}
+            </TabPanel>
           </TabContext>
         </DialogContent>
         <DialogActions>

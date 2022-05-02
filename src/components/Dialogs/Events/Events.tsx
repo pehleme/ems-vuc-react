@@ -16,23 +16,25 @@ import {
 } from "@mui/material";
 
 function createData(
+  date: string,
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  type: string,
+  permanence: string,
 ) {
-  return { name, calories, fat, carbs, protein };
+  return {
+    date,
+    type,
+    name,
+    permanence,
+  };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread1", 356, 16.0, 49, 3.9),
-  createData("Gingerbread2", 356, 16.0, 49, 3.9),
-  createData("Gingerbread3", 356, 16.0, 49, 3.9),
+  createData("10/03/22", "Palestra", "Palestra sobre ABC", "1h40 min"),
+  createData("22/02/22", "Palestra", "Palestra sobre ABC", "30 min"),
+  createData("01/01/22", "Simpósio", "Simpósio XPTO", "2h10 min"),
+  createData("01/12/21", "Conferência", "Conferência ABC", "10 min"),
+  createData("01/11/21", "Simpósio", "Simpósio XPTO", "2h10 min"),
 ];
 
 function EventsDialog({ children }: { children?: ReactNode }) {
@@ -75,13 +77,11 @@ function EventsDialog({ children }: { children?: ReactNode }) {
               </TableHead>
               <TableBody>
                 {rows.map((row) => (
-                  <TableRow key={row.name}>
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell>{row.calories}</TableCell>
-                    <TableCell>{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
+                  <TableRow key={row.date}>
+                    <TableCell width={5}>{row.date}</TableCell>
+                    <TableCell>{row.type}</TableCell>
+                    <TableCell>{row.name}</TableCell>
+                    <TableCell align="right">{row.permanence}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

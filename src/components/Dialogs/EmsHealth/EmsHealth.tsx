@@ -12,12 +12,12 @@ import {
 } from "@mui/material";
 
 const medicamentos = [
-  { nome: "Medicamento 1", quantity: 12 },
-  { nome: "Medicamento 2", quantity: 8 },
-  { nome: "Medicamento 3", quantity: 4 },
-  { nome: "Medicamento 4", quantity: 1 },
-  { nome: "Medicamento 5", quantity: 0 },
-  { nome: "Medicamento 6", quantity: 0 },
+  { name: "Medicamento 1", quantity: 12 },
+  { name: "Medicamento 2", quantity: 8 },
+  { name: "Medicamento 3", quantity: 4 },
+  { name: "Medicamento 4", quantity: 1 },
+  { name: "Medicamento 5", quantity: 0 },
+  { name: "Medicamento 6", quantity: 0 },
 ];
 
 function EmsHealthDialog({ children }: { children?: ReactNode }) {
@@ -52,7 +52,7 @@ function EmsHealthDialog({ children }: { children?: ReactNode }) {
         <DialogContent>
           <Grid container spacing={5}>
             {medicamentos.map((item) => (
-              <Grid key={item.nome} xs={4} item>
+              <Grid key={item.name} xs={4} item>
                 <Box
                   px={6}
                   py={3}
@@ -64,7 +64,7 @@ function EmsHealthDialog({ children }: { children?: ReactNode }) {
                     color="primary.dark"
                     fontWeight="700"
                   >
-                    {item.nome}
+                    {item.name}
                   </Typography>
                   <Typography fontSize="24px" fontWeight="700">
                     {item.quantity}

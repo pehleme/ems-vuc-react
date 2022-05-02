@@ -14,10 +14,34 @@ import {
 
 import { SecretariesDialog } from "../Secretaries";
 
-const medicamentos = [
-  { name: "Medicamento 1", quantity: 12 },
-  { name: "Medicamento 2", quantity: 8 },
-  { name: "Medicamento 3", quantity: 4 },
+const attendances = [
+  {
+    name: "OrtoSP",
+    active: true,
+    address: "Rua Cincinato Braga, 340 São Paulo - SP, 6º andar",
+    telephone: "(11) 2123-4565",
+    days: "Seg, ter, qua",
+    startTime: 8,
+    endTime: 11,
+  },
+  {
+    name: "Consultório 2",
+    active: false,
+    address: "R. Oscar Freire, 1431 - cj 105 Pinheiros, SP",
+    telephone: "(11) 4125-7271",
+    days: "Quinta-feira",
+    startTime: 13,
+    endTime: 15,
+  },
+  {
+    name: "Consultório 3",
+    active: false,
+    address: "R. Martiniano de Carvalho, 864 - cj 602 - Bela Vista, SP",
+    telephone: "(11) 4326-5327",
+    days: "Sexta-feira",
+    startTime: 17,
+    endTime: 18,
+  },
 ];
 
 function AttendancesDialog() {
@@ -40,29 +64,39 @@ function AttendancesDialog() {
         <DialogTitle>Horários de atendimento</DialogTitle>
         <DialogContent>
           <Grid container spacing={5}>
-            {medicamentos.map((item) => (
+            {attendances.map((item) => (
               <Grid key={item.name} xs={4} item>
-                <Box p={3} borderRadius="16px" border="1px solid #CFDFE7">
+                <Box
+                  p={3}
+                  borderRadius="16px"
+                  border="1px solid #CFDFE7"
+                  height="370px"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                >
                   <Box
                     display="flex"
                     alignItems="center"
                     justifyContent="space-between"
-                    color="primary.dark"
+                    color={item.active ? "primary.dark" : "#CFDFE7"}
                   >
                     <HiOutlineLocationMarker fontSize="30px" />
-                    <Typography fontWeight="700">Hoje</Typography>
+                    {item.active && (
+                      <Typography fontWeight="700">hoje</Typography>
+                    )}
                   </Box>
                   <Typography fontWeight="700">{item.name}</Typography>
                   <Typography fontSize="14px" color="#25272A">
-                    Rua Cincinato Braga, 340São Paulo - SP, 6º andar <br />
-                    Tel.: (11) 2123-4565
+                    {item.address} <br />
+                    Tel.: {item.telephone}
                   </Typography>
-                  <SecretariesDialog />
+                  <SecretariesDialog title={item.name} />
                   <Typography color="primary.dark" fontWeight="700">
-                    das 8 até 11h30
+                    {item.days}
                   </Typography>
                   <Typography color="primary.dark" fontSize="14px">
-                    das 8 <br /> até 11h30
+                    das {item.startTime} às {item.endTime}h
                   </Typography>
                 </Box>
               </Grid>

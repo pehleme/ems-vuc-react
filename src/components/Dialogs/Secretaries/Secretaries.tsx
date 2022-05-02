@@ -15,13 +15,37 @@ import {
 } from "@mui/material";
 
 const medicamentos = [
-  { nome: "Medicamento 1", quantity: 12 },
-  { nome: "Medicamento 2", quantity: 8 },
-  { nome: "Medicamento 3", quantity: 4 },
-  { nome: "Medicamento 4", quantity: 1 },
+  {
+    name: "Gabriela Oliveira",
+    age: 44,
+    birthday: "18/09",
+    email: "gabriela.oliveira@outlook.com.br",
+    cellphone: "(11) 97482-1573",
+  },
+  {
+    name: "Carol da Silva",
+    age: 52,
+    birthday: "04/10",
+    email: "carol.silva@gmail.com",
+    cellphone: "(11) 98842-4122",
+  },
+  {
+    name: "Rebeca Castro",
+    age: 24,
+    birthday: "05/02",
+    email: "rebecacastro@gmail.com",
+    cellphone: "(13) 98415-6572",
+  },
+  {
+    name: "Jaqueline de Souza",
+    age: 30,
+    birthday: "06/07",
+    email: "jaque.souza@gmail.com",
+    cellphone: "(11) 95523-1142",
+  },
 ];
 
-function SecretariesDialog() {
+function SecretariesDialog({ title }: { title: string }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -38,11 +62,11 @@ function SecretariesDialog() {
         ver secretárias
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <DialogTitle>Secretárias (Nome clínica)</DialogTitle>
+        <DialogTitle>Secretárias ({title})</DialogTitle>
         <DialogContent>
           <Grid container spacing={5}>
             {medicamentos.map((item) => (
-              <Grid key={item.nome} xs={6} item>
+              <Grid key={item.name} xs={6} item>
                 <Box
                   px={6}
                   py={3}
@@ -50,24 +74,17 @@ function SecretariesDialog() {
                   border="1px solid #CFDFE7"
                 >
                   <Typography fontSize="14px" fontWeight="700" mb={3}>
-                    {item.nome}
+                    {item.name}
                   </Typography>
                   <InfoBox label="Idade">
-                    44 anos&nbsp;
-                    <Box
-                      display="inline"
-                      sx={{
-                        color: "primary.main",
-                      }}
-                    >
+                    {item.age} anos&nbsp;
+                    <Box display="inline" color="primary.main">
                       <MdOutlineCake />
-                      &nbsp;30/03
+                      &nbsp;{item.birthday}
                     </Box>
                   </InfoBox>
-                  <InfoBox label="E-mail">
-                    gabriela.oliveira@outlook.com.br
-                  </InfoBox>
-                  <InfoBox label="Celular">(11) 9.7482-1573</InfoBox>
+                  <InfoBox label="E-mail">{item.email}</InfoBox>
+                  <InfoBox label="Celular">{item.cellphone}</InfoBox>
                 </Box>
               </Grid>
             ))}

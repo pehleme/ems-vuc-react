@@ -1,22 +1,35 @@
-import { FaArrowLeft, FaBirthdayCake, FaStar } from "react-icons/fa";
+import { FaArrowLeft, FaStar } from "react-icons/fa";
+import { MdOutlineCake } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import { InfoBox } from "~/components";
 
 import { Box, Chip, Grid, IconButton, Typography } from "@mui/material";
 
 function HeaderView() {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/");
+  };
+
   return (
     <header>
       <Grid container height="70px" color="white">
-        <Grid item xs={3} px={2} bgcolor="#0989C8">
-          <Box display="flex" alignItems="center" height="100%">
+        <Grid item xs={3} px={2} bgcolor="primary.dark">
+          <Box
+            onClick={handleBack}
+            display="flex"
+            alignItems="center"
+            height="100%"
+          >
             <IconButton>
               <FaArrowLeft color="white" fontSize="20px" />
             </IconButton>
             <Typography>Ficha do médico</Typography>
           </Box>
         </Grid>
-        <Grid item xs={9} px={2} bgcolor="#1F9CDA">
+        <Grid item xs={9} px={2} bgcolor="primary.main">
           <Box
             display="flex"
             flexDirection="column"
@@ -48,19 +61,19 @@ function HeaderView() {
         <Grid item xs={3} px={2}>
           <Box display="flex" flexDirection="column">
             <InfoBox label="Idade">
-              Ortopedia&nbsp;
+              44 anos&nbsp;
               <Box
                 display="inline"
                 sx={{
                   color: "primary.main",
                 }}
               >
-                30/03&nbsp;
-                <FaBirthdayCake />
+                <MdOutlineCake />
+                &nbsp;30/03
               </Box>
             </InfoBox>
-            <InfoBox label="E-mail">400</InfoBox>
-            <InfoBox label="Celular">em dia</InfoBox>
+            <InfoBox label="E-mail">lohrana@gmail.com</InfoBox>
+            <InfoBox label="Celular">(11) 9.7482-1573</InfoBox>
           </Box>
         </Grid>
         <Grid item xs={6} px={2}>

@@ -17,16 +17,33 @@ const theme = createTheme({
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        root: {
+          ".MuiPaper-root": {
+            borderRadius: "16px",
+          },
+        },
+      },
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          fontWeight: 700,
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          ".MuiTableCell-head": {
+            fontWeight: 700,
+            color: "#6B6B6D",
+          },
+        },
+      },
+    },
   },
-  // overrides: {
-  //   MuiCssBaseline: {
-  //     "@global": {
-  //       "html, body, #root": {
-  //         height: "100%",
-  //       },
-  //     },
-  //   },
-  // },
 });
 
 export { theme };

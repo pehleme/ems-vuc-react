@@ -1,11 +1,20 @@
+import { ElementType, ReactNode } from "react";
 import { FaCheckCircle, FaChevronRight } from "react-icons/fa";
 
 import { Box, Divider, Typography } from "@mui/material";
+
+import {
+  EmsHealthDialog,
+  EventsDialog,
+  MedExDialog,
+  SamplesDialog,
+} from "../Dialogs";
 
 type NavBarItems = {
   title?: string;
   subtitle?: string;
   helper?: string;
+  dialog?: ElementType<ReactNode>;
 };
 
 export function NavBar() {
@@ -14,18 +23,25 @@ export function NavBar() {
       title: "Eventos",
       subtitle: "Participe de Eventos",
       helper: "Ultima vez: 10/10/2021",
+      dialog: EventsDialog,
     },
     {
       title: "EMS Saúde",
       subtitle: "Possui pacientes",
       helper: "36 utilizam atualmente",
+      dialog: EmsHealthDialog,
     },
     {
       title: "MedEx",
       subtitle: "Possui cadastro",
       helper: "Último acesso: 10/10/2021",
+      dialog: MedExDialog,
     },
-    { title: "Amostras", helper: "Último entrega: 10/10/2021" },
+    {
+      title: "Amostras",
+      helper: "Último entrega: 10/10/2021",
+      dialog: SamplesDialog,
+    },
   ];
 
   return (
@@ -37,17 +53,9 @@ export function NavBar() {
       alignItems="stretch"
       borderRight="1px solid #E0E0E0"
     >
-      {menuItems.map(({ title, subtitle, helper }) => (
+      {menuItems.map(({ title, subtitle, helper, dialog }) => (
         <Box key={title} flex="1">
-          <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="space-between"
-            alignItems="center"
-            height="100%"
-            p={3}
-            sx={{ cursor: "pointer" }}
-          >
+          <Box component={dialog}>
             <Box>
               <Typography fontWeight="700">{title}</Typography>
               {subtitle && (

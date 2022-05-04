@@ -1,1 +1,1 @@
-export * from "./Opv";
+export * from "./Opv.component";

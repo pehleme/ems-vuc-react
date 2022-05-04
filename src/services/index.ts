@@ -1,1 +1,1 @@
-export * from "./todo/todo-service";
+export * from "./todo/todo.service";

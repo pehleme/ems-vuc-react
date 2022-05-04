@@ -1,8 +1,9 @@
 import { lazy } from "react";
 
 // PUBLIC
-const HomePage = lazy(() => import("~/pages/Home/HomePage"));
-const SplashPage = lazy(() => import("~/pages/Splash/SplashPage"));
-const LoadingPage = lazy(() => import("~/pages/Loading/LoadingPage"));
+const HomePage = lazy(() => import("./Home"));
+const ScreeningPage = lazy(() => import("./Screening"));
+const SplashPage = lazy(() => import("./Splash"));
+const LoadingPage = lazy(() => import("./Loading"));
 
-export { HomePage, SplashPage, LoadingPage };
+export { ScreeningPage, HomePage, SplashPage, LoadingPage };

@@ -1,1 +1,1 @@
-export * from "./MedEx";
+export * from "./MedEx.component";

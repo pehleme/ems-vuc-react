@@ -1,12 +1,16 @@
 import type { RouteObject } from "react-router-dom";
 
 import { MainLayout } from "~/layouts";
-import { HomePage, LoadingPage, SplashPage } from "~/pages";
+import { HomePage, LoadingPage, ScreeningPage, SplashPage } from "~/pages";
 
 const PUBLIC_ROUTES: RouteObject[] = [
   {
     path: "/",
     element: <SplashPage />,
+  },
+  {
+    path: "/screening",
+    element: <ScreeningPage />,
   },
   {
     path: "/loading",

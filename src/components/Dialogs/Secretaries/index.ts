@@ -1,1 +1,1 @@
-export * from "./Secretaries";
+export * from "./Secretaries.component";

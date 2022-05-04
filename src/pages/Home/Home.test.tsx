@@ -1,11 +1,11 @@
 import { shallow } from "enzyme";
 import { describe, expect, it } from "vitest";
 
-import { MainLayout } from "./MainLayout";
+import HomePage from "./Home.page";
 
-describe("Main Layout", () => {
+describe("HomePage", () => {
   it("renders snapshots", () => {
-    const wrapper = shallow(<MainLayout />);
+    const wrapper = shallow(<HomePage />);
     expect(wrapper).toBeTruthy();
   });
 });

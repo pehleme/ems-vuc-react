@@ -1,1 +1,1 @@
-export * from "./Prescriptions";
+export * from "./Prescriptions.component";

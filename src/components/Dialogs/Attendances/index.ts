@@ -1,1 +1,1 @@
-export * from "./Attendances";
+export * from "./Attendances.component";

@@ -34,9 +34,24 @@ export default defineConfig(async ({ mode }) => {
           theme_color: "#1F9CDA",
           background_color: "#1F9CDA",
           display: "standalone",
+          orientation: "portrait",
           start_url: "/",
           scope: "/",
           categories: ["medical"],
+          screenshots: [],
+          related_applications: [],
+          shortcuts: [
+            {
+              name: "Home",
+              url: "/",
+              icons: [],
+            },
+            {
+              name: "Screening",
+              url: "/screening",
+              icons: [],
+            },
+          ],
           icons: [
             {
               src: "/android-chrome-192x192.png",

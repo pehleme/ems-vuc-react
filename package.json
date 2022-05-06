@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "sandbox": "vite --mode sandbox",
+    "sandbox": "vite --mode test",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",

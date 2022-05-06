@@ -30,7 +30,13 @@ export default defineConfig(async ({ mode }) => {
         manifest: {
           name: env.VITE_APP_TITLE,
           description: env.VITE_APP_DESCRIPTION,
-          theme_color: "#ffffff",
+          short_name: "VUC",
+          theme_color: "#1F9CDA",
+          background_color: "#1F9CDA",
+          display: "standalone",
+          start_url: "/",
+          scope: "/",
+          categories: ["medical"],
           icons: [
             {
               src: "/android-chrome-192x192.png",

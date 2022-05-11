@@ -1,4 +1,4 @@
-import { PhysicianModel } from "~/data/models/index.model";
+import { PhysicianModel } from "~/data/models";
 import { Api } from "~/libs/api";
 
 const API_PATH = "/physicians";

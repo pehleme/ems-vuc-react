@@ -8,7 +8,7 @@ import "~/libs/i18n";
 import { MODE } from "~/utils/constants";
 
 if (MODE === "test") {
-  await import("~/../mocks/browser").then(({ worker }) => worker.start());
+  await import("~/mocks/browser").then(({ worker }) => worker.start());
 }
 // <--SANDBOX-->
 

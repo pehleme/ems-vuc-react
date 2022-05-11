@@ -30,7 +30,9 @@
     "react-i18next": "^11.16.7",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
-    "recharts": "^2.1.9"
+    "recharts": "^2.1.9",
+    "rxdb": "^12.3.2",
+    "rxjs": "^7.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

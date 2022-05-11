@@ -1,4 +1,4 @@
-import { OpvModel } from "./index.model";
+import { OpvModel } from ".";
 import { AnnotationModel } from "./Annotation.model";
 import { BaseModel } from "./Base.model";
 import { ClinicModel } from "./Clinic.model";

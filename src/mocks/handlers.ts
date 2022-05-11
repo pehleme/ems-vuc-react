@@ -1,4 +1,4 @@
-import { db } from "./factory";
+import { db } from "./database";
 import { seeds } from "./seeds";
 
 seeds();

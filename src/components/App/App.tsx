@@ -12,8 +12,8 @@ function App() {
   useRegisterSW();
 
   const loadAll = async () => {
-    const physicians = await PhysicianService.findAll();
-    console.log(physicians);
+    const physician = await PhysicianService.findAll();
+    console.log(physician);
   };
 
   useEffect(() => {

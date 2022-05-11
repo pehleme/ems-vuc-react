@@ -1,4 +1,4 @@
-import { db } from "./factory";
+import { db } from "./database";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const createList = (quantity: number, action: any) =>

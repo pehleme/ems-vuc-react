@@ -19,5 +19,6 @@
     "types": ["vitest/globals"]
   },
   "include": ["src", "mocks", "config", "*.config.ts"],
+  "exclude": ["public/mockServiceWorker.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

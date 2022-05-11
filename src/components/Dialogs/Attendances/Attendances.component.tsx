@@ -19,7 +19,7 @@ const attendances = [
     name: "OrtoSP",
     active: true,
     address: "Rua Cincinato Braga, 340 São Paulo - SP, 6º andar",
-    telephone: "(11) 2123-4565",
+    cellphone: "(11) 2123-4565",
     days: "Seg, ter, qua",
     startTime: 8,
     endTime: 11,
@@ -28,7 +28,7 @@ const attendances = [
     name: "Consultório 2",
     active: false,
     address: "R. Oscar Freire, 1431 - cj 105 Pinheiros, SP",
-    telephone: "(11) 4125-7271",
+    cellphone: "(11) 4125-7271",
     days: "Quinta-feira",
     startTime: 13,
     endTime: 15,
@@ -37,7 +37,7 @@ const attendances = [
     name: "Consultório 3",
     active: false,
     address: "R. Martiniano de Carvalho, 864 - cj 602 - Bela Vista, SP",
-    telephone: "(11) 4326-5327",
+    cellphone: "(11) 4326-5327",
     days: "Sexta-feira",
     startTime: 17,
     endTime: 18,
@@ -89,7 +89,7 @@ function AttendancesDialog() {
                   <Typography fontWeight="700">{item.name}</Typography>
                   <Typography fontSize="14px" color="#25272A">
                     {item.address} <br />
-                    Tel.: {item.telephone}
+                    Tel.: {item.cellphone}
                   </Typography>
                   <SecretariesDialog title={item.name} />
                   <Typography color="primary.dark" fontWeight="700">

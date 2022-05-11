@@ -2,7 +2,7 @@ import { IconAnotacoes, IconAtendimento, IconOPV } from "~/assets/icons";
 import {
   AttendancesDialog,
   EventCard,
-  MedicineCard,
+  MedicationCard,
   NotesDialog,
   OpvDialog,
 } from "~/components";
@@ -37,7 +37,7 @@ function HomePage() {
         <Grid item xs={12} container spacing={2}>
           {prescriptions.map(({ name, cat, comment, percentage }) => (
             <Grid key={name} item xs={4}>
-              <MedicineCard
+              <MedicationCard
                 name={name}
                 cat={cat}
                 comment={comment}

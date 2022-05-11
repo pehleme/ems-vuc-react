@@ -45,7 +45,7 @@ function MedExDialog({ children }: { children?: ReactNode }) {
         justifyContent="space-between"
         alignItems="center"
         height="100%"
-        p={3}
+        px={3}
         sx={{ cursor: "pointer" }}
         onClick={handleOpen}
       >

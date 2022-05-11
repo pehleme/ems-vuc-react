@@ -6,6 +6,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import { VitePWA } from "vite-plugin-pwa";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig(async ({ mode }) => {
@@ -14,6 +15,7 @@ export default defineConfig(async ({ mode }) => {
   return {
     plugins: [
       react(),
+      viteCommonjs(),
       tsconfigPaths(),
       createHtmlPlugin({
         minify: true,
@@ -27,6 +29,9 @@ export default defineConfig(async ({ mode }) => {
       VitePWA({
         registerType: "autoUpdate",
         includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
+        workbox: {
+          cleanupOutdatedCaches: false,
+        },
         manifest: {
           name: env.VITE_APP_TITLE,
           description: env.VITE_APP_DESCRIPTION,

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
+// import { Database } from "~/libs/database";
 import { Routes } from "~/routes/Routes";
 import { PhysicianService } from "~/services";
 import { theme } from "~/styles/theme";
@@ -12,7 +13,11 @@ function App() {
   useRegisterSW();
 
   const loadAll = async () => {
-    const physician = await PhysicianService.findAll();
+    const [physician] = await PhysicianService.findAll();
+    // const db = await Database.get();
+    // const foundPhysician = await db.physician.findOne().exec();
+    // console.log(foundPhysician?.name);
+
     console.log(physician);
   };
 

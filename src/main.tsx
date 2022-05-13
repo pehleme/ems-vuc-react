@@ -7,14 +7,20 @@ import "~/libs/i18n";
 // <--SANDBOX-->
 import { MODE } from "~/utils/constants";
 
-if (MODE === "test") {
-  await import("~/mocks/browser").then(({ worker }) => worker.start());
+async function prepare() {
+  if (MODE === "test") {
+    const { worker } = await import("~/mocks/browser");
+    return worker.start();
+  }
+  return Promise.resolve();
 }
 // <--SANDBOX-->
 
-render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-  document.getElementById("root"),
-);
+prepare().then(() => {
+  render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+    document.getElementById("root"),
+  );
+});

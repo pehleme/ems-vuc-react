@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "sandbox": "vite --mode test",
+    "sandbox:start": "npx msw init ./public",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",

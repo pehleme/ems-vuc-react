@@ -6,7 +6,6 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import { VitePWA } from "vite-plugin-pwa";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig(async ({ mode }) => {
@@ -15,7 +14,6 @@ export default defineConfig(async ({ mode }) => {
   return {
     plugins: [
       react(),
-      viteCommonjs(),
       tsconfigPaths(),
       createHtmlPlugin({
         minify: true,

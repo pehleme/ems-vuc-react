@@ -7,6 +7,4 @@ seeds();
 
 const handlers = [...db.physician.toHandlers("rest", `${API_URL}/physician`)];
 
-console.log(handlers);
-
 export { handlers };

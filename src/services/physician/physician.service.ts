@@ -1,11 +1,17 @@
 import { PhysicianModel } from "~/data/models";
 import { Api } from "~/libs/api";
+import { db } from "~/mocks/database";
+import { seeds } from "~/mocks/seeds";
 
 const API_PATH = "/physicians";
 
+seeds();
+
 const findAll = async (params?: object) => {
-  const { data } = await Api.get<PhysicianModel[]>(API_PATH, { params });
-  return data;
+  // const { data } = await Api.get<PhysicianModel[]>(API_PATH, { params });
+  // console.log(data);
+
+  return db.physician.getAll();
 };
 
 const find = async (id?: string, params?: object) => {

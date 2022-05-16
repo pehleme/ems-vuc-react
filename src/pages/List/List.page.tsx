@@ -61,7 +61,7 @@ function ListPage() {
       try {
         setLoading(true);
         const list = await PhysicianService.findAll(/* state as object */);
-        setPhysicians(list);
+        setPhysicians(list as PhysicianModel[]);
       } catch (error) {
         console.log(error);
       } finally {

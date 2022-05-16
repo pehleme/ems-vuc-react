@@ -3,7 +3,7 @@ import { RxCollection, RxJsonSchema } from "rxdb";
 
 export type PhysicianCollection = RxCollection<PhysicianModel>;
 
-const physician: RxJsonSchema<PhysicianModel> = {
+const physicianSchema: RxJsonSchema<PhysicianModel> = {
   title: "physician schema",
   primaryKey: "id",
   type: "object",
@@ -12,7 +12,7 @@ const physician: RxJsonSchema<PhysicianModel> = {
     id: {
       type: "string",
     },
-    name: { type: "number" },
+    name: { type: "string" },
     crm: { type: "string" },
     email: { type: "string" },
     cellphone: { type: "string" },
@@ -30,16 +30,64 @@ const physician: RxJsonSchema<PhysicianModel> = {
     hasEvents: { type: "boolean" },
     hasEmsHealth: { type: "boolean" },
 
-    events: { type: "array", ref: "event" },
-    emsHealth: { type: "array" },
-    medEx: { type: "array" },
-    samples: { type: "array" },
-    medications: { type: "array" },
-    clinics: { type: "array" },
-    opv: { type: "array" },
-    annotations: { type: "array" },
+    events: {
+      type: "array",
+      ref: "event",
+      items: {
+        type: "object",
+      },
+    },
+    emsHealth: {
+      type: "array",
+      ref: "emsHealth",
+      items: {
+        type: "object",
+      },
+    },
+    medEx: {
+      type: "array",
+      ref: "medEx",
+      items: {
+        type: "object",
+      },
+    },
+    samples: {
+      type: "array",
+      ref: "sample",
+      items: {
+        type: "object",
+      },
+    },
+    medications: {
+      type: "array",
+      ref: "medication",
+      items: {
+        type: "object",
+      },
+    },
+    clinics: {
+      type: "array",
+      ref: "clinic",
+      items: {
+        type: "object",
+      },
+    },
+    opv: {
+      type: "array",
+      ref: "opv",
+      items: {
+        type: "object",
+      },
+    },
+    annotations: {
+      type: "array",
+      ref: "annotation",
+      items: {
+        type: "object",
+      },
+    },
   },
   required: ["id"],
 };
 
-export { physician };
+export { physicianSchema };

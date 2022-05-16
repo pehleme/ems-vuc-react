@@ -3,7 +3,9 @@ import { createRxDatabase, RxDatabase } from "rxdb";
 import { getRxStorageDexie } from "rxdb/plugins/dexie";
 
 import { DbCollections } from "./database.type";
-import { physician } from "./schemas";
+import { eventSchema, physicianSchema } from "./schemas";
+
+// addRxPlugin(RxDBDevModePlugin);
 
 let dbPromise: Promise<RxDatabase<DbCollections>> | null = null;
 
@@ -13,7 +15,10 @@ const create = async () => {
     storage: getRxStorageDexie(),
   });
 
-  await db.addCollections({ physician: { schema: physician } });
+  await db.addCollections({
+    physician: { schema: physicianSchema },
+    event: { schema: eventSchema },
+  });
 
   return db;
 };

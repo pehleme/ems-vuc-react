@@ -6,7 +6,7 @@
     "dev": "vite",
     "sandbox": "vite --mode test",
     "sandbox:start": "npx msw init ./public",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --mode test",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",

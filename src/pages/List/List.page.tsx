@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeEvent, Fragment, useEffect, useMemo, useState } from "react";
 import { FaChevronRight, FaSearch, FaUser } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -79,7 +80,7 @@ function ListPage() {
     setPage(1);
   };
 
-  const handleSelect = (id: string) => {
+  const handleSelect = (id?: string) => {
     navigate(`/loading/?${id}`);
   };
 
@@ -88,7 +89,8 @@ function ListPage() {
       <Header backRoute="/screening" backText="Lista de médicos">
         <Box display="flex" alignItems="center" height="100%">
           <Typography>
-            {state.line} / {state.sector} / {state.district}
+            {(state as any).line ?? ""} / {(state as any).sector ?? ""} /
+            {(state as any).district ?? ""}
           </Typography>
         </Box>
       </Header>

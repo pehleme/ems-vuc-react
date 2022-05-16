@@ -1,23 +1,34 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { ImgLogoEmsShadow, ImgLogoVuc } from "~/assets/images";
 
 import { Box, Slide } from "@mui/material";
 
 function SplashPage() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
   const [show, setShow] = useState(false);
 
-  const navigate = useNavigate();
+  const type = searchParams.get("type");
 
   useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-    }, 1000);
-    setTimeout(() => {
-      navigate("/screening");
-    }, 2000);
-  }, [navigate]);
+    const handleSplash = () => {
+      setTimeout(() => {
+        setShow(true);
+      }, 1000);
+      setTimeout(() => {
+        if (type === "sfnet") {
+          navigate("/home");
+        } else {
+          navigate("/screening");
+        }
+      }, 2000);
+    };
+
+    handleSplash();
+  }, [navigate, type]);
 
   return (
     <Box

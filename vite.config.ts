@@ -39,7 +39,7 @@ export default defineConfig(async ({ mode }) => {
           display: "standalone",
           orientation: "portrait",
           start_url: "/",
-          scope: "/",
+          scope: "https://prismatic-macaron-99c99a.netlify.app/",
           categories: ["medical"],
           screenshots: [],
           related_applications: [],

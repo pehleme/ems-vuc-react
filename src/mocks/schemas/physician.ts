@@ -1,10 +1,14 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { faker } from "@faker-js/faker";
 import { manyOf, primaryKey } from "@mswjs/data";
 
 const physician = {
   id: primaryKey(faker.datatype.uuid),
   name: faker.name.findName,
-  crm: () => faker.helpers.regexpStyleStringParse("00000000-0/BR"),
+  crm: () =>
+    faker.helpers.regexpStyleStringParse(
+      "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/[0-9]-BR",
+    ),
   email: faker.internet.email,
   cellphone: faker.phone.phoneNumber,
   birthday: faker.datatype.uuid,

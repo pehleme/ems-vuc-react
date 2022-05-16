@@ -5,8 +5,7 @@ const createList = (quantity: number, action: any) =>
   [...Array(quantity).keys()].map(() => action);
 
 const seeds = () => {
-  createList(
-    10,
+  [...Array(100).keys()].map(() =>
     db.physician.create({
       events: createList(10, db.event.create()),
       emsHealth: createList(6, db.emsHealth.create()),

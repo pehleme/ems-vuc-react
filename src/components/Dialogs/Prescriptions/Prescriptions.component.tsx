@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import {
   Legend,
@@ -62,7 +62,7 @@ function PrescriptionsDialog() {
   };
 
   return (
-    <Box>
+    <Fragment>
       <Button onClick={handleOpen} variant="text" fullWidth>
         ver detalhes
       </Button>
@@ -117,7 +117,7 @@ function PrescriptionsDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-    </Box>
+    </Fragment>
   );
 }
 

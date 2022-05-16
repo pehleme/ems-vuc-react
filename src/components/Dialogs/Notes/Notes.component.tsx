@@ -1,4 +1,4 @@
-import { SyntheticEvent, useMemo, useState } from "react";
+import { Fragment, SyntheticEvent, useMemo, useState } from "react";
 
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
@@ -85,7 +85,7 @@ function NotesDialog() {
   );
 
   return (
-    <Box>
+    <Fragment>
       <Button onClick={handleOpen} variant="contained" fullWidth>
         ver mais
       </Button>
@@ -113,7 +113,7 @@ function NotesDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-    </Box>
+    </Fragment>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { IconLoading } from "~/assets/icons";
@@ -53,14 +53,14 @@ function LoadingPage() {
         src={IconLoading}
         height="30%"
       />
-      <Box>
+      <Fragment>
         <Typography color="primary.dark" fontSize="22px" fontWeight="700">
           Importando as fichas dos seus médicos
         </Typography>
         <Typography color="#6B6B6D" fontSize="18px">
           Isso pode levar alguns instantes...
         </Typography>
-      </Box>
+      </Fragment>
     </Box>
   );
 }

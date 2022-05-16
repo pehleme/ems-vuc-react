@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
 import {
@@ -56,7 +56,7 @@ function AttendancesDialog() {
   };
 
   return (
-    <Box>
+    <Fragment>
       <Button onClick={handleOpen} variant="contained" fullWidth>
         ver mais
       </Button>
@@ -109,7 +109,7 @@ function AttendancesDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-    </Box>
+    </Fragment>
   );
 }
 

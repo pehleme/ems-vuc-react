@@ -1,7 +1,8 @@
+import { HeaderProps } from "./Header.types";
 import { HeaderView } from "./HeaderView.component";
 
-function Header() {
-  return <HeaderView />;
+function Header(rest: HeaderProps) {
+  return <HeaderView {...rest} />;
 }
 
 export { Header };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { MdOutlineCake } from "react-icons/md";
 
 import { InfoBox } from "~/components";
@@ -57,7 +57,7 @@ function SecretariesDialog({ title }: { title: string }) {
   };
 
   return (
-    <Box>
+    <Fragment>
       <Button onClick={handleOpen} variant="outlined" fullWidth>
         ver secretárias
       </Button>
@@ -96,7 +96,7 @@ function SecretariesDialog({ title }: { title: string }) {
           </Button>
         </DialogActions>
       </Dialog>
-    </Box>
+    </Fragment>
   );
 }
 

@@ -4,3 +4,4 @@ export * from "./Cards";
 export * from "./Dialogs";
 export * from "./Header";
 export * from "./NavBar";
+export * from "./Profile";

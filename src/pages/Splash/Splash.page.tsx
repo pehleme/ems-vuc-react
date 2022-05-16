@@ -15,7 +15,7 @@ function SplashPage() {
       setShow(true);
     }, 1000);
     setTimeout(() => {
-      navigate("/loading");
+      navigate("/screening");
     }, 2000);
   }, [navigate]);
 

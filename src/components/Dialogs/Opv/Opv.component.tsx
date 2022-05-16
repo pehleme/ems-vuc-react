@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import {
-  Box,
   Button,
   Dialog,
   DialogActions,
@@ -43,7 +42,7 @@ function OpvDialog() {
   };
 
   return (
-    <Box>
+    <Fragment>
       <Button onClick={handleOpen} variant="contained" fullWidth>
         ver mais
       </Button>
@@ -75,7 +74,7 @@ function OpvDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-    </Box>
+    </Fragment>
   );
 }
 

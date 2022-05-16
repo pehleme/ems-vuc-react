@@ -6,3 +6,4 @@ export interface EventModel extends BaseModel {
   type?: number;
   permanence?: string;
 }
+export type Texte = Extract<keyof EventModel, string>;

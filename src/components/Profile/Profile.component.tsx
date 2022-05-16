@@ -24,7 +24,12 @@ const doctor = {
 function Profile() {
   return (
     <Fragment>
-      <Header backRoute="/" backText="Ficha do médico">
+      <Header
+        onClickBack={() =>
+          window.open("https://gleaming-dodol-2263c2.netlify.app", "_blank")
+        }
+        backText="Ficha do médico"
+      >
         <Box
           display="flex"
           flexDirection="column"

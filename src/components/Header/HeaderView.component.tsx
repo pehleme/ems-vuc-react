@@ -1,6 +1,5 @@
 import { PropsWithChildren } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 
@@ -9,17 +8,9 @@ import { HeaderProps } from "./Header.types";
 function HeaderView({
   children,
   backText,
-  backRoute,
+  onClickBack,
 }: PropsWithChildren<HeaderProps>) {
-  const navigate = useNavigate();
-
-  const handleBack = () => {
-    if (backRoute) {
-      navigate(backRoute);
-    }
-  };
-
-  const hasBackButton = !!backRoute || !!backText;
+  const hasBackButton = !!onClickBack || !!backText;
 
   return (
     <header>
@@ -27,7 +18,7 @@ function HeaderView({
         {hasBackButton && (
           <Grid item xs={3} px={2} bgcolor="primary.dark">
             <Box
-              onClick={handleBack}
+              onClick={onClickBack}
               display="flex"
               alignItems="center"
               height="100%"

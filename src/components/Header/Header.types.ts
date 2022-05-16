@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 interface Props {
   backText?: string;
-  backRoute?: string;
+  onClickBack?: () => void;
 }
 
 export type HeaderProps = PropsWithChildren<Props>;

@@ -86,7 +86,10 @@ function ListPage() {
 
   return (
     <Fragment>
-      <Header backRoute="/screening" backText="Lista de médicos">
+      <Header
+        onClickBack={() => navigate("/screening")}
+        backText="Lista de médicos"
+      >
         <Box display="flex" alignItems="center" height="100%">
           <Typography>
             {(state as any).line ?? ""} / {(state as any).sector ?? ""} /

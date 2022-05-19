@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaRegCheckCircle } from "react-icons/fa";
 import { MdOutlineCake } from "react-icons/md";
 
 import { Box, Chip, Grid, Typography } from "@mui/material";
@@ -12,7 +12,7 @@ const doctor = {
   crm: "00000000-0/BR",
   specialty: "Cardiologista",
   patients: 400,
-  anvisaLetter: "em dia",
+  anvisaLetter: "está em dia",
   age: 30,
   birthday: "22/10",
   email: "lohrana@gmail.com",
@@ -52,25 +52,51 @@ function Profile() {
       >
         <Grid item xs={3} px={2}>
           <Box display="flex" flexDirection="column">
-            <InfoBox label="Especialidade">{doctor.specialty}</InfoBox>
-            <InfoBox label="Pacientes/mês">{doctor.patients}</InfoBox>
-            <InfoBox label="Carta Anvisa">{doctor.anvisaLetter}</InfoBox>
+            <Typography fontSize="14px" fontWeight="bold">
+              Carta Anvisa
+            </Typography>
+            <Typography fontSize="14px" fontWeight="bold" color="primary">
+              {doctor.anvisaLetter}
+            </Typography>
+            <Typography fontSize="12px" fontWeight="slim" color="gray">
+              válida até 10/05/22
+            </Typography>
           </Box>
         </Grid>
         <Grid item xs={3} px={2} borderLeft="1px solid #02568017">
           <Box display="flex" flexDirection="column">
-            <InfoBox label="Idade">
-              {doctor.age} anos&nbsp;
-              <Box display="inline" color="primary.main">
-                <MdOutlineCake />
-                &nbsp;{doctor.birthday}
-              </Box>
-            </InfoBox>
-            <InfoBox label="E-mail">{doctor.email}</InfoBox>
-            <InfoBox label="Celular">{doctor.cellphone}</InfoBox>
+            <Typography fontSize="14px">{doctor.email}</Typography>
+            <Typography fontSize="14px" fontWeight="bold">
+              {doctor.cellphone}
+            </Typography>
+            <Typography
+              fontSize="14px"
+              fontWeight="bold"
+              color="primary"
+              display="flex"
+              alignItems="center"
+            >
+              <FaRegCheckCircle style={{ marginRight: 3 }} />
+              Programa Alcance
+            </Typography>
           </Box>
         </Grid>
-        <Grid item xs={6} px={2}>
+        <Grid item xs={3} px={2}>
+          <Box display="flex" flexDirection="column">
+            <InfoBox label="Idade">{doctor.age} anos</InfoBox>
+            <Typography
+              fontSize="14px"
+              fontWeight="bold"
+              color="primary"
+              display="flex"
+              alignItems="center"
+            >
+              <MdOutlineCake style={{ marginRight: 3 }} />
+              {doctor.birthday}
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={3} px={2}>
           <Box display="flex" flexDirection="column">
             <InfoBox label="Perfil médico" vertical>
               <Box display="flex" mt={1}>
@@ -80,15 +106,6 @@ function Profile() {
                     label={item}
                     color="primary"
                     sx={{ marginRight: 1 }}
-                  />
-                ))}
-                {doctor.profilesVAC.map((item) => (
-                  <Chip
-                    key={item}
-                    label={item}
-                    color="secondary"
-                    icon={<FaStar />}
-                    sx={{ color: "white", marginRight: 1 }}
                   />
                 ))}
               </Box>

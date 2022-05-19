@@ -1,3 +1,5 @@
+import { FaStar } from "react-icons/fa";
+
 import { IconAnotacoes, IconAtendimento, IconOPV } from "~/assets/icons";
 import {
   AttendancesDialog,
@@ -7,7 +9,7 @@ import {
   OpvDialog,
 } from "~/components";
 
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 const prescriptions = [
   {
@@ -29,6 +31,20 @@ const prescriptions = [
     percentage: 90,
   },
 ];
+
+const doctor = {
+  name: "Dr. Lohran Anguera",
+  crm: "00000000-0/BR",
+  specialty: "Cardiologista",
+  patients: 400,
+  anvisaLetter: "está em dia",
+  age: 30,
+  birthday: "22/10",
+  email: "lohrana@gmail.com",
+  cellphone: "(11) 97359-6482",
+  profilesPDI: ["Paciência", "Visual"],
+  profilesVAC: ["Dono", "Decisor"],
+};
 
 function HomePage() {
   return (
@@ -53,10 +69,25 @@ function HomePage() {
               dialog={AttendancesDialog}
               icon={IconAtendimento}
             >
-              <strong>
-                Hoje: OrtoSP <br />
-                das 8h até 11h30
-              </strong>
+              <strong>OrtoSP</strong>
+              <br />
+              <Box display="flex" my={1}>
+                {doctor.profilesVAC.map((item) => (
+                  <Typography
+                    key={item}
+                    fontSize="12px"
+                    fontWeight="bold"
+                    color="secondary"
+                    display="flex"
+                    alignItems="center"
+                    mr={2}
+                  >
+                    <FaStar style={{ marginRight: 3 }} />
+                    {item}
+                  </Typography>
+                ))}
+              </Box>
+              das 8h até 11h30
               <br />
               Rua Cincinato Braga, 340 Bela Vista, São Paulo - SP
             </EventCard>

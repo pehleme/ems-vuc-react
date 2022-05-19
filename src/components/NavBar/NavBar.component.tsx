@@ -8,6 +8,7 @@ import {
   EventsDialog,
   MedExDialog,
   SamplesDialog,
+  InvestmentsDialog,
 } from "../Dialogs";
 
 type NavBarItems = {
@@ -19,6 +20,12 @@ type NavBarItems = {
 
 export function NavBar() {
   const menuItems: NavBarItems[] = [
+    {
+      title: "Investimentos",
+      subtitle: "Possui investimentos",
+      helper: "2 ativos",
+      dialog: InvestmentsDialog,
+    },
     {
       title: "Eventos",
       subtitle: "Participe de Eventos",

@@ -1,6 +1,7 @@
 export * from "./Attendances";
 export * from "./EmsHealth";
 export * from "./Events";
+export * from "./Investments";
 export * from "./MedEx";
 export * from "./Notes";
 export * from "./Opv";
